@@ -1,12 +1,36 @@
 <template>
   <div id="app">
-    <header class="app-header">
-      <h1>📚 Shaokun Library</h1>
-      <p>Vue.js JSON Lab - FIT5032</p>
-    </header>
+    <!-- Bootstrap Header -->
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <router-link to="/" class="nav-link" active-class="active" aria-current="page">Home (Week 5)</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/about" class="nav-link" active-class="active">About</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/FireLogin" class="nav-link" active-class="active">Firebase Login</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/FireRegister" class="nav-link" active-class="active">Firebase Register</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/addbook" class="nav-link" active-class="active">Add Book</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/WeatherCheck" class="nav-link" active-class="active">Get Weather</router-link>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact us</a>
+          </li>
+        </ul>
+      </header>
+    </div>
     
     <main class="app-main">
-      <JSONLab />
+      <router-view />
     </main>
     
     <footer class="app-footer">
@@ -16,7 +40,7 @@
 </template>
 
 <script setup>
-import JSONLab from './components/JSON.vue'
+// App now uses Vue Router; views are rendered via <router-view />
 </script>
 
 <style>
@@ -37,25 +61,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.app-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.app-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 300;
-}
-
-.app-header p {
-  font-size: 1.1rem;
-  opacity: 0.9;
 }
 
 .app-main {
@@ -79,10 +84,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .app-header h1 {
-    font-size: 2rem;
-  }
-  
   .app-main {
     padding: 1rem;
   }
